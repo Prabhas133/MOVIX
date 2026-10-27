@@ -1,0 +1,2993 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #101116;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.movix-navbar {
+  background: #101116;
+  border-bottom: 1px solid #292a33;
+}
+
+.movix-logo {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.movix-logo span,
+.movix-hero h1 span {
+  color: #f04464;
+}
+
+.movix-logo:hover {
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+  color: #b7b7c2;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #f04464;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.movix-btn {
+  background: #f04464;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 7px;
+  transition: background 0.2s ease;
+}
+
+.movix-btn:hover {
+  background: #d92f50;
+  color: #fff;
+}
+
+.movix-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.movix-hero {
+  padding: 100px 0;
+  background: radial-gradient(
+    ellipse at 80% 30%,
+    #3c1629 0%,
+    #101116 60%
+  );
+}
+
+.movix-hero h1 {
+  color: #fff;
+}
+
+.movix-tagline {
+  color: #f04464;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-description {
+  color: #b7b7c2;
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   MOVIES SECTION
+========================= */
+
+#movies {
+  color: #fff;
+}
+
+.movix-link {
+  color: #f04464;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.movix-link:hover {
+  color: #ff8298;
+}
+
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.movie-card {
+  height: 100%;
+  background: #191a22;
+  border: 1px solid #292a33;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  border-color: #f04464;
+  box-shadow: 0 10px 28px rgba(240, 68, 100, 0.12);
+}
+
+
+/* Movie Poster */
+
+.movie-poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #242630;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.02);
+}
+
+
+/* Movie Information */
+
+.movie-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.movie-genre {
+  color: #9999a7;
+  font-size: 12px;
+  min-height: 18px;
+  margin-bottom: 16px;
+}
+
+.movie-rating {
+  color: #ffc857;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.movie-language {
+  color: #b7b7c2;
+  font-size: 11px;
+}
+
+
+/* =========================
+   EMPTY MOVIE STATE
+========================= */
+
+.empty-state {
+  border: 1px dashed #383944;
+  background: #15161d;
+}
+
+.movie-icon {
+  font-size: 42px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.movix-footer {
+  border-top: 1px solid #292a33;
+  color: #9999a7;
+}
+
+.movix-footer .movix-logo {
+  color: #fff !important;
+}
+
+.movix-footer .movix-logo span {
+  color: #f04464;
+}
+
+
+/* Seats booking css */
+.seat-screen {
+  width: min(90%, 500px);
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  background: #292a33;
+  border-radius: 50% 50% 8px 8px;
+  border-top: 4px solid #f04464;
+  box-shadow: 0 -8px 25px rgba(240, 68, 100, 0.12);
+}
+
+.seat-layout {
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.seat-row-label {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  color: #9999a7;
+  font-size: 12px;
+}
+
+.seat {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #666875;
+  border-radius: 8px 8px 4px 4px;
+  background: #191a22;
+  color: #fff;
+  font-size: 11px;
+  transition: 0.2s ease;
+}
+
+.seat:hover {
+  border-color: #f04464;
+  color: #f04464;
+}
+
+.seat-selected {
+  background: #f04464;
+  border-color: #f04464;
+  color: #fff;
+}
+
+.seat-legend {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 7px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.seat-legend.available {
+  background: #191a22;
+  border: 1px solid #666875;
+}
+
+.seat-legend.selected {
+  background: #f04464;
+}
+
+.booking-summary {
+  max-width: 500px;
+  padding: 22px;
+  background: #191a22;
+  border: 1px solid #292a33;
+  border-radius: 12px;
+}
+
+@media (max-width: 480px) {
+  .seat {
+    width: 28px;
+    height: 30px;
+  }
+
+  .seat-layout {
+    max-width: 100%;
+  }
+}
+
+
+/* Payment css */
+
+
+.payment-card {
+  padding: 24px;
+  background: #191a22;
+  border: 1px solid #292a33;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.payment-card .form-control {
+  padding: 12px;
+  background: #101116;
+  border: 1px solid #393a46;
+  color: #fff;
+}
+
+.payment-card .form-control:focus {
+  background: #101116;
+  border-color: #f04464;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(240, 68, 100, 0.15);
+}
+
+.payment-card .form-control::placeholder {
+  color: #777986;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #101116;
+  border: 1px solid #393a46;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.payment-option-active {
+  border-color: #f04464;
+  background: #241820;
+}
+
+.payment-option input {
+  accent-color: #f04464;
+}
+
+.payment-poster {
+  width: 85px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* Confirmation css */
+ 
+.confirmation-card {
+  max-width: 620px;
+  padding: 32px;
+  background: #191a22;
+  border: 1px solid #292a33;
+  border-radius: 16px;
+}
+
+.confirmation-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(40, 190, 120, 0.12);
+  border: 2px solid #28be78;
+  color: #28be78;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.confirmation-movie {
+  padding: 16px;
+  background: #101116;
+  border-radius: 10px;
+}
+
+.confirmation-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid #292a33;
+}
+
+.confirmation-detail span {
+  color: #a6a7b2;
+}
+
+.confirmation-detail strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.total-row {
+  border-bottom: none;
+  font-size: 18px;
+}
+
+.total-row strong {
+  color: #ffc857;
+}
+
+@media (max-width: 480px) {
+  .confirmation-card {
+    padding: 20px;
+  }
+
+  .confirmation-detail {
+    font-size: 13px;
+  }
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .movix-navbar,
+  .movix-footer,
+  .confirmation-card button {
+    display: none !important;
+  }
+
+  .confirmation-card {
+    max-width: 100%;
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #ccc;
+  }
+
+  .confirmation-detail span,
+  .text-secondary {
+    color: #444 !important;
+  }
+}
+
+
+/* Seat booked css */
+.seat-booked {
+  background: #454650 !important;
+  border-color: #454650 !important;
+  color: #a0a0a8 !important;
+  cursor: not-allowed;
+  opacity: 0.65;
+  text-decoration: line-through;
+}
+
+.seat-legend.booked {
+  background: #454650;
+  border: 1px solid #454650;
+}
+
+.movix-search {
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    -webkit-text-fill-color: #222222 !important;
+}
+
+.movix-search::placeholder {
+    color: #777777 !important;
+    -webkit-text-fill-color: #777777 !important;
+    opacity: 1 !important;
+}
+
+.movix-search:focus {
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    border-color: #f04464 !important;
+    box-shadow: 0 0 0 3px rgba(240, 68, 100, 0.15) !important;
+}
+
+/* Movix booking success toast */
+.movix-toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(380px, calc(100vw - 30px));
+    padding: 18px;
+    color: #fff;
+    background: #202129;
+    border-left: 5px solid #28a745;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    animation: movixSlideIn 0.45s ease-out;
+}
+
+.movix-toast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    background: #28a745;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.movix-toast-content {
+    flex: 1;
+}
+
+.movix-toast strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.movix-toast p {
+    color: #c6c6ce;
+    font-size: 14px;
+}
+
+.movix-toast-close {
+    align-self: flex-start;
+    padding: 0;
+    color: #c6c6ce;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@keyframes movixSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(110%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .movix-toast {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+
+/* Navbar login and signup buttons */
+.movix-navbar .navbar-actions {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px !important;
+    margin-left: auto !important;
+}
+
+/* Login button */
+.movix-navbar a.movix-login-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border: 1px solid #555762 !important;
+    border-radius: 9px !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Login hover */
+.movix-navbar a.movix-login-btn:hover {
+    color: #ffffff !important;
+    background-color: #252733 !important;
+    border-color: #f04464 !important;
+}
+
+/* Sign Up button */
+.movix-navbar a.movix-signup-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px !important;
+    color: #ffffff !important;
+    background-color: #f04464 !important;
+    border: 1px solid #f04464 !important;
+    border-radius: 9px !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+
+ /* Login and Signup pages design */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 35px;
+    color: #ffffff;
+    background: #1b1c24;
+    border: 1px solid #30313c;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.auth-subtitle {
+    color: #a5a5b0;
+    font-size: 14px;
+}
+
+.auth-card .form-label {
+    color: #e8e8ed;
+    font-weight: 500;
+}
+
+.auth-card .form-control {
+    padding: 12px 14px;
+    color: #ffffff;
+    background: #252733;
+    border: 1px solid #454858;
+    border-radius: 8px;
+}
+
+.auth-card .form-control::placeholder {
+    color: #92929d;
+}
+
+.auth-card .form-control:focus {
+    color: #ffffff;
+    background: #252733;
+    border-color: #f04464;
+    box-shadow: 0 0 0 3px rgba(240, 68, 100, 0.15);
+}
+
+.auth-card .form-control:focus::placeholder {
+    color: #92929d;
+}
+
+.auth-footer {
+    color: #b8b8c2;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #f04464;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    color: #ff718b;
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 25px 20px;
+    }
+} 
+
+
+/* Profile dropdown container */
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 16px;
+    color: #ffffff;
+    background: #1b1c24;
+    border: 1px solid #454858;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.profile-btn:hover,
+.profile-btn:focus {
+    color: #ffffff;
+    border-color: #f04464;
+    background: #252733;
+}
+
+.profile-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    background: #f04464;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.profile-arrow {
+    font-size: 10px;
+}
+
+/* Dropdown menu */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 1050;
+    width: 260px;
+    padding: 20px;
+    color: #ffffff;
+    background: #1b1c24;
+    border: 1px solid #363741;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profile-dropdown h6 {
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.profile-dropdown p {
+    margin-bottom: 0;
+    color: #a5a5b0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.profile-dropdown hr {
+    border-color: #454858;
+}
+
+.profile-menu-link {
+    display: block;
+    padding: 8px 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.profile-menu-link:hover {
+    color: #f04464;
+}
+
+.logout-btn {
+    color: #ffffff;
+    background: #f04464;
+    border: none;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    color: #ffffff;
+    background: #d92f50;
+}
+
+.movix-navbar .navbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-left: auto;
+}
+
+
+/* Theatre listing */
+.theatre-section {
+    margin-top: 35px;
+}
+
+.theatre-card {
+    padding: 25px;
+    background: #1b1c24;
+    border: 1px solid #363741;
+    border-radius: 12px;
+}
+
+.theatre-card h4 {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.theatre-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    background: #29202a;
+    border-radius: 10px;
+    font-size: 26px;
+}
+
+.theatre-card hr {
+    border-color: #454858;
+}
+
+/* Showtime buttons */
+.theatre-card .showtime-btn {
+    min-width: 125px;
+    padding: 10px 16px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #30b75a;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.theatre-card .showtime-btn:hover {
+    color: #ffffff;
+    background: #f04464;
+    border-color: #f04464;
+}
+
+.theatre-card .showtime-btn small {
+    margin-top: 5px;
+    color: #a5a5b0;
+    font-size: 11px;
+}
+
+.theatre-card .showtime-btn:hover small {
+    color: #ffffff;
+}
+
+@media (max-width: 576px) {
+    .theatre-card {
+        padding: 18px;
+    }
+
+    .theatre-card .showtime-btn {
+        min-width: 110px;
+    }
+}
+
+
+/* Movie overview layout */
+.movie-details-page .movie-overview {
+    width: 100%;
+}
+
+.movie-details-page .movie-details-poster {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 540px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.movie-details-page .movie-info-column {
+    min-width: 0;
+    padding-left: 12px;
+    overflow-wrap: anywhere;
+}
+
+.movie-details-page .movie-info-column h1,
+.movie-details-page .movie-info-column h3,
+.movie-details-page .movie-info-column p {
+    max-width: 100%;
+}
+
+.movie-details-page .movie-description {
+    line-height: 1.8;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Theatre names should wrap instead of overflowing */
+.theatre-card .theatre-heading {
+    min-width: 0;
+}
+
+.theatre-card .theatre-heading h4 {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+    .movie-details-page .movie-details-poster {
+        width: 100%;
+        max-width: 320px;
+        max-height: 450px;
+        margin: 0 auto 10px;
+    }
+
+    .movie-details-page .movie-info-column {
+        padding-left: 12px;
+    }
+}
+
+/* Home pages search bar */
+/* Movix movie search and filter panel */
+.movix-filter-panel {
+  background: #17191f;
+  border: 1px solid #292c35;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Filter labels */
+.movix-filter-label {
+  display: block;
+  color: #f5f5f7;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+/* Search and select inputs */
+.movix-filter-control {
+  width: 100%;
+  min-height: 46px;
+  background-color: #22252d;
+  color: #ffffff;
+  border: 1px solid #393d48;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.movix-filter-control::placeholder {
+  color: #a7aab4;
+  opacity: 1;
+}
+
+/* Dropdown options */
+.movix-filter-control option {
+  background-color: #22252d;
+  color: #ffffff;
+}
+
+/* Search/select focus */
+.movix-filter-control:focus {
+  background-color: #22252d;
+  color: #ffffff;
+  border-color: #f04464;
+  box-shadow: 0 0 0 0.2rem rgba(240, 68, 100, 0.2);
+  outline: none;
+}
+
+/* Reset button */
+.movix-reset-btn {
+  min-height: 46px;
+  background-color: transparent;
+  color: #f04464;
+  border: 1px solid #f04464;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.movix-reset-btn:hover {
+  background-color: #f04464;
+  color: #ffffff;
+  border-color: #f04464;
+}
+
+.movix-reset-btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(240, 68, 100, 0.25);
+}
+
+/* Responsive spacing */
+@media (max-width: 767.98px) {
+  .movix-filter-panel {
+    padding: 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Seat category legend */
+.seat-category-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 650px;
+}
+
+.seat-category-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  background: #17191f;
+  border: 1px solid #30333d;
+  border-radius: 10px;
+  color: #f5f5f7;
+}
+
+.seat-category-item strong {
+  margin-left: 4px;
+  color: #f04464;
+}
+
+.seat-legend-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+
+/* Seat category colors */
+.seat-premium {
+  --seat-color: #f04464;
+}
+
+.seat-gold {
+  --seat-color: #e5ae45;
+}
+
+.seat-silver {
+  --seat-color: #9ca3af;
+}
+
+.seat-layout {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.seat-row {
+  min-width: max-content;
+}
+
+.seat-row-label {
+  width: 18px;
+  margin-right: 4px;
+  color: #a7aab4;
+  font-weight: 600;
+}
+
+.seat-category-label {
+  width: 65px;
+  margin-left: 8px;
+  color: #a7aab4;
+  font-size: 0.75rem;
+}
+
+.seat {
+  width: 38px;
+  height: 36px;
+  border: 1px solid var(--seat-color, #777);
+  border-radius: 8px 8px 4px 4px;
+  background: color-mix(in srgb, var(--seat-color) 14%, #17191f);
+  color: var(--seat-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.seat:not(:disabled):hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--seat-color) 30%, #17191f);
+}
+
+.seat.seat-selected {
+  background: #f04464;
+  border-color: #f04464;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(240, 68, 100, 0.25);
+}
+
+.seat.seat-booked {
+  background: #393b43;
+  border-color: #393b43;
+  color: #858791;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.seat-legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.seat-legend-dot.available {
+  background: #9ca3af;
+}
+
+.seat-legend-dot.selected {
+  background: #f04464;
+}
+
+.seat-legend-dot.booked {
+  background: #393b43;
+  border: 1px solid #656875;
+}
+
+/* Booking summary */
+.booking-summary {
+  max-width: 520px;
+  padding: 24px;
+  background: #17191f;
+  border: 1px solid #30333d;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.booking-summary hr {
+  border-color: #393d48;
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .seat-selection-page {
+    overflow-x: hidden;
+  }
+
+  .seat-layout {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 8px 4px;
+  }
+
+  .seat-row {
+    gap: 5px !important;
+  }
+
+  .seat {
+    width: 30px;
+    height: 32px;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+  }
+
+  .seat-category-label {
+    width: 48px;
+    font-size: 0.65rem;
+    margin-left: 2px;
+  }
+
+  .seat-category-legend {
+    gap: 8px;
+  }
+
+  .seat-category-item {
+    padding: 8px;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+
+  .booking-summary {
+    padding: 18px;
+  }
+}
+
+/* Coupon Section */
+.coupon-section {
+    background: #1c1c24;
+    border: 1px solid #353541;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.coupon-section h5 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Coupon Input */
+.coupon-section .form-control {
+    background-color: #292934;
+    color: #ffffff;
+    border: 1px solid #454552;
+    padding: 11px 12px;
+}
+
+.coupon-section .form-control::placeholder {
+    color: #a5a5b0;
+}
+
+.coupon-section .form-control:focus {
+    background-color: #292934;
+    color: #ffffff;
+    border-color: #f04464;
+    box-shadow: 0 0 0 0.2rem rgba(240, 68, 100, 0.2);
+}
+
+/* Apply Button */
+.coupon-section .btn-danger {
+    background-color: #f04464;
+    border-color: #f04464;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.coupon-section .btn-danger:hover {
+    background-color: #d92f50;
+    border-color: #d92f50;
+    transform: translateY(-1px);
+}
+
+/* Coupon Information */
+.coupon-info {
+    font-size: 13px;
+    color: #c4c4ce;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Bootstrap Alerts */
+.coupon-section .alert {
+    font-size: 13px;
+    border-radius: 8px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.coupon-section .alert-warning {
+    background-color: #332b1d;
+    border-color: #705526;
+    color: #ffda8a;
+}
+
+.coupon-section .alert-success {
+    background-color: #193328;
+    border-color: #286747;
+    color: #8ce0b1;
+}
+
+.coupon-section .alert-danger {
+    background-color: #3a2028;
+    border-color: #7b3040;
+    color: #ff9aaa;
+}
+
+/* Coupon Icons */
+.coupon-section .bi {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .coupon-section {
+        padding: 15px;
+    }
+
+    .coupon-section h5 {
+        font-size: 16px;
+    }
+
+    .coupon-section .btn-danger {
+        padding: 10px 14px;
+    }
+}
+
+/* Digital QR Ticket */
+.movix-qr-ticket {
+    background: #1c1c24;
+    border: 1px solid #353541;
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+.movix-qr-ticket h5 {
+    color: #f04464;
+}
+
+.movix-qr-code {
+    max-width: 100%;
+}
+
+.movix-qr-code svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Print ticket without unnecessary UI */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .movix-qr-ticket {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #cccccc;
+        break-inside: avoid;
+    }
+
+    .movix-qr-ticket h5,
+    .movix-qr-ticket p,
+    .confirmation-detail,
+    .confirmation-card h1,
+    .confirmation-card h4,
+    .confirmation-card h5 {
+        color: #000000 !important;
+    }
+
+    .movix-qr-ticket .text-secondary,
+    .confirmation-card .text-secondary {
+        color: #555555 !important;
+    }
+
+    .confirmation-card .btn {
+        display: none !important;
+    }
+}
+
+/* Cancel booking popup */
+.movix-cancel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(4px);
+}
+
+.movix-cancel-modal {
+    width: 100%;
+    max-width: 480px;
+    background: #1c1c24;
+    color: #ffffff;
+    border: 1px solid #393944;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: movix-modal-appear 0.2s ease-out;
+}
+
+.movix-cancel-header,
+.movix-cancel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+}
+
+.movix-cancel-header {
+    border-bottom: 1px solid #393944;
+}
+
+.movix-cancel-header h5 {
+    color: #f04464;
+}
+
+.movix-cancel-body {
+    padding: 20px;
+}
+
+.movix-cancel-details {
+    padding: 14px;
+    background: #262630;
+    border-radius: 9px;
+    overflow-wrap: anywhere;
+}
+
+.movix-cancel-details p {
+    margin-bottom: 10px;
+}
+
+.movix-cancel-footer {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    border-top: 1px solid #393944;
+}
+
+.movix-cancel-footer .btn-danger {
+    background: #f04464;
+    border-color: #f04464;
+}
+
+.movix-cancel-footer .btn-danger:hover {
+    background: #d92f50;
+    border-color: #d92f50;
+}
+
+@keyframes movix-modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .movix-cancel-footer {
+        flex-direction: column-reverse;
+    }
+
+    .movix-cancel-footer .btn {
+        width: 100%;
+    }
+}
+
+
+/* Responsive Movix navbar */
+
+.mobile-nav {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .movix-navbar .container {
+    position: relative;
+  }
+
+  .mobile-nav {
+    display: none;
+    width: 100%;
+    padding: 14px 0;
+    background: #101116;
+  }
+
+  .mobile-nav.mobile-nav-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-nav .navbar-nav {
+    width: 100%;
+    gap: 0 !important;
+  }
+
+  .mobile-nav .nav-link {
+    display: block;
+    padding: 13px 12px;
+    color: #fff;
+    border-bottom: 1px solid #292a32;
+  }
+
+  .mobile-nav .nav-link:hover {
+    color: #f04464;
+  }
+
+  .mobile-nav .navbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 0 !important;
+    padding: 0 12px;
+  }
+
+  .movix-navbar .navbar-toggler {
+    border: 2px solid #888;
+    padding: 7px 12px;
+  }
+
+  .movix-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px #f04464;
+  }
+
+  .mobile-nav .profile-wrapper {
+    position: relative;
+  }
+
+  .mobile-nav .profile-dropdown {
+    z-index: 1050;
+  }
+}
+
+
+/* ===== MOVIX HERO ANIMATIONS ===== */
+
+.movix-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(240, 68, 100, 0.16),
+      transparent 45%
+    ),
+    #101116;
+}
+
+/* Subtle moving cinematic glow */
+.movix-hero::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(240, 68, 100, 0.08),
+    transparent 48%
+  );
+  animation: movixAmbientGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes movixAmbientGlow {
+  from {
+    transform: translate(-5%, -3%);
+  }
+  to {
+    transform: translate(5%, 4%);
+  }
+}
+
+/* Reveal hero content */
+.movix-hero .movix-tagline {
+  animation: movixFadeUp 0.7s ease-out both;
+}
+
+.movix-hero h1 {
+  animation: movixFadeUp 0.9s ease-out 0.12s both;
+}
+
+.movix-hero .hero-description {
+  animation: movixFadeUp 0.9s ease-out 0.24s both;
+}
+
+.movix-hero .movix-btn {
+  animation: movixFadeUp 0.9s ease-out 0.36s both;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+@keyframes movixFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pink glow on the highlighted word */
+.movix-hero h1 span {
+  color: #f04464;
+  text-shadow: 0 0 22px rgba(240, 68, 100, 0.22);
+  animation: movixTextGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes movixTextGlow {
+  from {
+    text-shadow: 0 0 8px rgba(240, 68, 100, 0.15);
+  }
+  to {
+    text-shadow: 0 0 24px rgba(240, 68, 100, 0.55);
+  }
+}
+
+/* Explore Movies button */
+.movix-hero .movix-btn:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 10px 28px rgba(240, 68, 100, 0.3);
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  .movix-hero *,
+  .movix-hero::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ===== MOVIX CENTERED CINEMATIC HERO ===== */
+
+.movix-hero {
+  min-height: 620px;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 80% 30%,
+      rgba(240, 68, 100, 0.16),
+      transparent 48%
+    ),
+    linear-gradient(120deg, #101116, #171016 65%, #21121b);
+}
+
+/* Center content in the hero container */
+.movix-hero > .container {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.movix-hero .row {
+  justify-content: center;
+}
+
+.movix-hero .col-lg-8 {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Smooth entrance animations */
+.movix-hero .movix-tagline {
+  animation: movixHeroReveal 0.8s ease-out both;
+}
+
+.movix-hero h1 {
+  animation: movixHeroReveal 0.9s ease-out 0.15s both;
+}
+
+.movix-hero .hero-description {
+  animation: movixHeroReveal 0.9s ease-out 0.3s both;
+}
+
+.movix-hero .movix-btn {
+  animation: movixHeroReveal 0.9s ease-out 0.45s both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@keyframes movixHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated pink heading */
+.movix-hero h1 span {
+  color: #f04464;
+  text-shadow: 0 0 18px rgba(240, 68, 100, 0.3);
+  animation: movixPinkGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes movixPinkGlow {
+  from {
+    text-shadow: 0 0 8px rgba(240, 68, 100, 0.2);
+  }
+  to {
+    text-shadow: 0 0 28px rgba(240, 68, 100, 0.65);
+  }
+}
+
+/* Explore button hover effect */
+.movix-hero .movix-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(240, 68, 100, 0.35);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .movix-hero {
+    min-height: 520px;
+    padding: 75px 0;
+    text-align: center;
+  }
+
+  .movix-hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+  .movix-hero .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .movix-hero *,
+  .movix-hero::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Add more space between Hero and Movies */
+.movix-hero {
+  padding-bottom: 300px;
+}
+
+/* Keep spacing responsive on mobile */
+@media (max-width: 768px) {
+  .movix-hero {
+    padding-bottom: 90px;
+  }
+}
+
+
+/* Slightly enlarge the Movix hero image */
+.movix-hero-image {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.movix-hero-image img {
+  display: block;
+  width: 115%;
+  max-width: none;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 28px rgba(240, 68, 100, 0.2));
+  transition: transform 0.4s ease;
+}
+
+.movix-hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Keep the image inside the screen on mobile */
+@media (max-width: 991.98px) {
+  .movix-hero-image {
+    margin-top: 30px;
+  }
+
+  .movix-hero-image img {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+  }
+}
+
+
+/* Refine hero height and spacing */
+.movix-hero {
+  min-height: 680px;
+  padding: 70px 0;
+  display: flex;
+  align-items: center;
+}
+
+.movix-hero-image img {
+  width: 115%;
+  max-width: none;
+  max-height: 540px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+  .movix-hero {
+    min-height: auto;
+    padding: 65px 0 80px;
+  }
+
+  .movix-hero-image img {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+  }
+}
+
+
+/* ===== MOVIX CINEMATIC PARTICLES ===== */
+
+.movix-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 78% 30%,
+      rgba(240, 68, 100, 0.13),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 15% 85%,
+      rgba(125, 35, 75, 0.12),
+      transparent 45%
+    ),
+    #101116;
+}
+
+/* Ambient cinematic lighting */
+.movix-hero::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(240, 68, 100, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(255, 30, 90, 0.10),
+      transparent 28%
+    );
+  animation: movixLightDrift 14s ease-in-out infinite alternate;
+}
+
+/* Fine glowing particles */
+.movix-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    radial-gradient(circle, #ff6684 1px, transparent 2px),
+    radial-gradient(circle, #ff315f 1.5px, transparent 2.5px),
+    radial-gradient(circle, #ff9aab 1px, transparent 2px),
+    radial-gradient(circle, #f04464 1px, transparent 2px);
+  background-size:
+    137px 163px,
+    211px 197px,
+    173px 229px,
+    263px 181px;
+  background-position:
+    10px 20px,
+    80px 60px,
+    40px 120px,
+    150px 30px;
+  animation: movixParticlesFloat 24s linear infinite;
+}
+
+@keyframes movixLightDrift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(2%, 2%, 0) scale(1.06);
+    opacity: 0.8;
+  }
+}
+
+@keyframes movixParticlesFloat {
+  from {
+    background-position:
+      10px 20px,
+      80px 60px,
+      40px 120px,
+      150px 30px;
+  }
+
+  to {
+    background-position:
+      10px -143px,
+      80px -137px,
+      40px -109px,
+      150px -151px;
+  }
+}
+
+/* Soft glow around the movie artwork */
+.movix-hero-image img {
+  filter:
+    drop-shadow(0 0 22px rgba(240, 68, 100, 0.15));
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.movix-hero-image img:hover {
+  filter:
+    drop-shadow(0 0 32px rgba(240, 68, 100, 0.3));
+}
+
+/* Keep animation gentle on mobile */
+@media (max-width: 768px) {
+  .movix-hero::after {
+    opacity: 0.25;
+  }
+
+  .movix-hero::before {
+    animation-duration: 20s;
+  }
+}
+
+/* Accessibility: respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .movix-hero::before,
+  .movix-hero::after {
+    animation: none !important;
+  }
+
+  .movix-hero-image img {
+    transition: none;
+  }
+}
+
+
+
+/* ===== MOVIX MOVIE SECTION ===== */
+
+#movies {
+  padding-top: 55px;
+  padding-bottom: 70px;
+}
+
+#movies h2 {
+  letter-spacing: -0.7px;
+}
+
+#movies .movie-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: #17181f;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+#movies .movie-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(240, 68, 100, 0.75);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35),
+              0 0 18px rgba(240, 68, 100, 0.12);
+}
+
+/* Poster image */
+#movies .movie-card img {
+  display: block;
+  width: 100%;
+  transition: transform 0.55s ease;
+}
+
+#movies .movie-card:hover img {
+  transform: scale(1.045);
+}
+
+/* Movie title */
+#movies .movie-card h3,
+#movies .movie-card h5,
+#movies .movie-card .movie-title {
+  transition: color 0.25s ease;
+}
+
+#movies .movie-card:hover h3,
+#movies .movie-card:hover h5,
+#movies .movie-card:hover .movie-title {
+  color: #f04464;
+}
+
+/* Filter panel */
+#movies .movie-filters,
+#movies .filter-panel {
+  background: linear-gradient(145deg, #191a22, #14151b);
+  border: 1px solid #2b2d37;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Inputs */
+#movies input,
+#movies select {
+  min-height: 48px;
+  background-color: #22242d;
+  color: #fff;
+  border: 1px solid #383b47;
+  border-radius: 10px;
+  transition: border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+#movies input:focus,
+#movies select:focus {
+  border-color: #f04464;
+  box-shadow: 0 0 0 3px rgba(240, 68, 100, 0.13);
+  outline: none;
+}
+
+#movies input::placeholder {
+  color: #a6a8b4;
+}
+
+/* Reset button */
+#movies button {
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+#movies button:hover {
+  transform: translateY(-2px);
+}
+
+/* Movie grid entrance */
+@media (prefers-reduced-motion: no-preference) {
+  #movies .movie-card {
+    animation: movixCardAppear 0.55s ease both;
+  }
+}
+
+@keyframes movixCardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  #movies {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+
+  #movies .movie-filters,
+  #movies .filter-panel {
+    padding: 16px;
+  }
+
+  #movies .movie-card {
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #movies .movie-card,
+  #movies .movie-card img,
+  #movies button {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ===== TRENDING MOVIES CAROUSEL ===== */
+
+.trending-section {
+  padding: 55px 0 65px;
+  background: #101116;
+  color: #fff;
+  overflow: hidden;
+}
+
+.trending-container {
+  width: min(86%, 1500px);
+  margin: 0 auto;
+}
+
+.trending-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.trending-eyebrow {
+  color: #f04464;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.trending-heading h2 {
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.trending-subtitle {
+  color: #9295a2;
+  margin: 0;
+}
+
+.trending-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.trending-controls button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1b1c24;
+  color: #fff;
+  border: 1px solid #393b47;
+  font-size: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.trending-controls button:hover {
+  background: #f04464;
+  border-color: #f04464;
+  transform: translateY(-2px);
+}
+
+.trending-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 60px) / 4);
+  gap: 20px;
+  overflow-x: auto;
+  padding: 5px 3px 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #f04464 #1b1c24;
+}
+
+.trending-card {
+  min-width: 0;
+  scroll-snap-align: start;
+  animation: trendingCardEnter 0.5s ease both;
+  animation-delay: calc(var(--card-index, 0) * 50ms);
+}
+
+.trending-poster-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.trending-poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #1b1c24;
+  border: 1px solid #2b2d37;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.trending-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trending-card:hover .trending-poster {
+  transform: translateY(-5px);
+  border-color: #f04464;
+  box-shadow: 0 12px 30px rgba(240, 68, 100, 0.18);
+}
+
+.trending-card:hover .trending-poster img {
+  transform: scale(1.06);
+}
+
+.trending-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(16, 17, 22, 0.88);
+  color: #ff6a86;
+  font-size: 0.72rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.trending-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 18px;
+  background: linear-gradient(
+    transparent 45%,
+    rgba(8, 8, 12, 0.9)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.trending-card:hover .trending-overlay,
+.trending-card:focus-within .trending-overlay {
+  opacity: 1;
+}
+
+.trending-view-button {
+  color: #fff;
+  background: #f04464;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.trending-card-info {
+  padding: 13px 2px 0;
+}
+
+.trending-card-info h3 {
+  color: #f5f5f7;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trending-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #999daa;
+  font-size: 0.82rem;
+}
+
+.trending-meta span:first-child {
+  color: #ffc76a;
+}
+
+@keyframes trendingCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .trending-carousel {
+    grid-auto-columns: calc((100% - 40px) / 3);
+  }
+}
+
+@media (max-width: 600px) {
+  .trending-container {
+    width: 92%;
+  }
+
+  .trending-section {
+    padding: 38px 0 45px;
+  }
+
+  .trending-heading {
+    align-items: center;
+  }
+
+  .trending-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .trending-controls button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .trending-carousel {
+    grid-auto-columns: 68%;
+    gap: 14px;
+  }
+
+  .trending-overlay {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trending-card,
+  .trending-poster,
+  .trending-poster img,
+  .trending-overlay,
+  .trending-controls button {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .trending-carousel {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* ===== MOVIX PREMIUM NAVBAR ===== */
+
+.movix-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  width: 100%;
+  padding: 14px 0;
+  background: rgba(15, 16, 21, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(240, 68, 100, 0.16);
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Center navbar content with balanced spacing */
+.movix-navbar > .container {
+  max-width: 1640px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* Logo */
+.movix-navbar .movix-logo {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.movix-navbar .movix-logo span {
+  color: #f04464;
+}
+
+.movix-navbar .movix-logo:hover {
+  transform: scale(1.04);
+}
+
+/* Navigation links */
+.movix-navbar .navbar-nav {
+  gap: 28px !important;
+}
+
+.movix-navbar .nav-link {
+  position: relative;
+  padding: 10px 2px !important;
+  color: #c8c9d2;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.movix-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #f04464;
+  transition: width 0.25s ease;
+}
+
+.movix-navbar .nav-link:hover,
+.movix-navbar .nav-link:focus {
+  color: #fff;
+}
+
+.movix-navbar .nav-link:hover::after,
+.movix-navbar .nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* Login and signup buttons */
+.movix-navbar .movix-login-btn,
+.movix-navbar .movix-signup-btn {
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 650;
+  transition: all 0.25s ease;
+}
+
+.movix-navbar .movix-login-btn {
+  color: #fff;
+  border: 1px solid #3a3c48;
+}
+
+.movix-navbar .movix-login-btn:hover {
+  border-color: #f04464;
+  color: #ff7189;
+}
+
+.movix-navbar .movix-signup-btn {
+  background: #f04464;
+  border: 1px solid #f04464;
+  color: #fff;
+}
+
+.movix-navbar .movix-signup-btn:hover {
+  background: #d93355;
+  border-color: #d93355;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(240, 68, 100, 0.22);
+}
+
+/* Profile button */
+.movix-navbar .profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 15px;
+  border: 1px solid #414350;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(145deg, #20212a, #17181f);
+  font-weight: 650;
+  transition: all 0.25s ease;
+}
+
+.movix-navbar .profile-btn:hover,
+.movix-navbar .profile-btn[aria-expanded="true"] {
+  border-color: #f04464;
+  box-shadow: 0 0 18px rgba(240, 68, 100, 0.12);
+}
+
+.movix-navbar .profile-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5676, #e72e55);
+  color: #fff;
+  font-weight: 800;
+}
+
+.movix-navbar .profile-arrow {
+  font-size: 0.7rem;
+  color: #bfc0ca;
+}
+
+/* Profile dropdown */
+.movix-navbar .profile-wrapper {
+  position: relative;
+}
+
+.movix-navbar .profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1100;
+  width: 260px;
+  padding: 18px;
+  border: 1px solid #343642;
+  border-radius: 14px;
+  background: #191a22;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  animation: movixDropdownIn 0.2s ease-out;
+}
+
+.movix-navbar .profile-dropdown h6 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.movix-navbar .profile-dropdown p {
+  color: #a7a9b5;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+}
+
+.movix-navbar .profile-dropdown hr {
+  border-color: #393b46;
+}
+
+.movix-navbar .profile-menu-link {
+  display: block;
+  padding: 9px 10px;
+  color: #e5e5eb;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.movix-navbar .profile-menu-link:hover {
+  color: #ff7189;
+  background: rgba(240, 68, 100, 0.09);
+}
+
+@keyframes movixDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger button */
+.movix-navbar .navbar-toggler {
+  border: 1px solid #454752;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.movix-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(240, 68, 100, 0.2);
+}
+
+/* Responsive navigation */
+@media (max-width: 991.98px) {
+  .movix-navbar {
+    padding: 12px 0;
+  }
+
+  .movix-navbar > .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .movix-navbar .navbar-collapse.mobile-nav {
+    flex-basis: 100%;
+    flex-grow: 1;
+  }
+
+  .movix-navbar .mobile-nav.mobile-nav-open {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 18px 4px 8px;
+  }
+
+  .movix-navbar .navbar-nav {
+    align-items: stretch;
+    gap: 4px !important;
+  }
+
+  .movix-navbar .nav-link {
+    padding: 11px 12px !important;
+    border-radius: 8px;
+  }
+
+  .movix-navbar .nav-link:hover {
+    background: rgba(240, 68, 100, 0.08);
+  }
+
+  .movix-navbar .nav-link::after {
+    display: none;
+  }
+
+  .movix-navbar .navbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0 !important;
+  }
+
+  .movix-navbar .profile-dropdown {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .movix-navbar *,
+  .movix-navbar *::before,
+  .movix-navbar *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Center navigation links on desktop */
+@media (min-width: 992px) {
+  .movix-navbar .navbar-collapse {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .movix-navbar .navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .movix-navbar .navbar-actions {
+    margin-left: auto !important;
+  }
+}
+
+/* Mobile: keep links in the normal dropdown flow */
+@media (max-width: 991.98px) {
+  .movix-navbar .navbar-nav {
+    position: static;
+    transform: none;
+  }
+}
+
+
+/* ===== MOVIX ABOUT FOOTER ===== */
+
+.movix-footer {
+  position: relative;
+  padding: 60px 0 0;
+  background: linear-gradient(180deg, #15151c, #0d0e12);
+  border-top: 1px solid rgba(240, 68, 100, 0.22);
+}
+
+.movix-footer .movix-logo {
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.movix-footer .movix-logo span {
+  color: #f04464;
+}
+
+.movix-footer-description,
+.movix-footer-text {
+  max-width: 360px;
+  color: #a5a7b3;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.movix-footer-heading {
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.movix-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.movix-footer-links a {
+  color: #a5a7b3;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.movix-footer-links a:hover {
+  color: #f04464;
+  transform: translateX(4px);
+}
+
+.movix-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 42px;
+  padding: 22px 0;
+  border-top: 1px solid #292a33;
+}
+
+.movix-footer-bottom p {
+  margin: 0;
+  color: #858795;
+  font-size: 0.88rem;
+}
+
+.movix-footer-bottom span {
+  color: #f04464;
+}
+
+@media (max-width: 767.98px) {
+  .movix-footer {
+    padding-top: 40px;
+  }
+
+  .movix-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 28px;
+  }
+}
+
+
+/* Prevent page content from being hidden behind the navbar */
+.movix-navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.movie-details-page {
+  padding-top: 32px;
+  scroll-margin-top: 90px;
+}
+
+
+.movix-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #303039;
+}
+
+.movix-footer-bottom p {
+  margin: 0;
+}
+
+.movix-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.movix-social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.movix-social-links a {
+  color: #aeb0c0;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.movix-social-links a:hover {
+  color: #f04464;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .movix-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .movix-footer-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+  .movix-hero {
+    padding: 70px 0;
+  }
+
+  .movix-hero h1 {
+    font-size: 42px;
+  }
+
+  .movie-title {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .movix-hero h1 {
+    font-size: 34px;
+  }
+
+  .movie-language {
+    font-size: 10px;
+  }
+}
+
+
+/* ===== FIX MOVIX MOBILE & TABLET NAVBAR ===== */
+
+@media (max-width: 991.98px) {
+  /* Expand the mobile navigation menu */
+  .movix-navbar .navbar-collapse.mobile-nav.mobile-nav-open {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 18px 0 12px;
+    margin-top: 14px;
+    border-top: 1px solid #30313a;
+    background: #101116;
+    gap: 16px;
+  }
+
+  /* Navigation links */
+  .movix-navbar .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px !important;
+    margin: 0 !important;
+  }
+
+  .movix-navbar .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 14px !important;
+    border-radius: 8px;
+    color: #d5d5de;
+    font-size: 1rem;
+  }
+
+  .movix-navbar .navbar-nav .nav-link:hover {
+    background: rgba(240, 68, 100, 0.1);
+    color: #ff7189;
+  }
+
+  /* Login, signup and profile area */
+  .movix-navbar .navbar-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+    margin: 0 !important;
+  }
+
+  .movix-navbar .profile-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .movix-navbar .profile-btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: flex-start;
+    padding: 8px 12px;
+  }
+
+  .movix-navbar .profile-arrow {
+    margin-left: auto;
+  }
+
+  /* Full-width profile dropdown */
+  .movix-navbar .profile-dropdown {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 10px;
+    padding: 18px;
+    border: 1px solid #343642;
+    border-radius: 12px;
+    background: #191a22;
+    box-shadow: none;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .movix-navbar .profile-dropdown h6 {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .movix-navbar .profile-dropdown p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .movix-navbar .profile-menu-link {
+    padding: 12px;
+  }
+
+  .movix-navbar .logout-btn {
+    min-height: 42px;
+    white-space: normal;
+  }
+
+  .movix-navbar .movix-login-btn,
+  .movix-navbar .movix-signup-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 400px) {
+  .movix-navbar > .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .movix-navbar .movix-logo {
+    font-size: 1.7rem;
+  }
+
+  .movix-navbar .profile-dropdown {
+    padding: 14px;
+  }
+}
+
