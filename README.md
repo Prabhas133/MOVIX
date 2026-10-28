@@ -69,7 +69,7 @@ npm run build
 
 ## Live Demo
 
-[View Movix Live](YOUR_VERCEL_DEPLOYMENT_URL)
+[View Movix Live](https://movixmovix-movie-booking.vercel.app)
 
 ## Developer
 
