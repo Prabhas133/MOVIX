@@ -21,7 +21,6 @@ Movix is a React-based movie booking web application that allows users to explor
 - CSS3
 - Bootstrap
 - React Router
-- TMDB API
 - LocalStorage
 - Git and GitHub
 
@@ -81,3 +80,4 @@ npm run build
 ---
 
 *Movix - Your cinema experience starts here.*
+
